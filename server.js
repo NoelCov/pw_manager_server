@@ -17,7 +17,7 @@ const db = await openDB();
 const app = express();
 app.use(
   cors({
-    origin: ["https://pw-manager-noelcov.vercel.app", "http://localhost:3000/"],
+    origin: ["https://pw-manager-noelcov.vercel.app", "http://localhost:3000", "https://pw-manager-flame.vercel.app"],
   })
 );
 app.use(express.json());
