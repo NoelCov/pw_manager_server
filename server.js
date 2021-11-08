@@ -133,6 +133,6 @@ app.post("/add", async (req, res) => {
   } catch (e) {}
 });
 
-app.listen(process.env.port || 8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log("Server running on port 8000");
 });
