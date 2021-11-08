@@ -15,7 +15,7 @@ import decryptPw from "./pw_utils/decryptPassword.js";
 const db = await openDB();
 
 const app = express();
-app.use(cors({ origin: "https://pw-manager-noelcov.vercel.app" }));
+app.use(cors({ origin: ["https://pw-manager-noelcov.vercel.app", "http://localhost:3000/"] }));
 app.use(express.json());
 
 app.post("/login", async (req, res) => {
