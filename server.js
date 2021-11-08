@@ -15,7 +15,7 @@ import decryptPw from "./pw_utils/decryptPassword.js";
 const db = await openDB();
 
 const app = express();
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://pw-manager-noelcov.vercel.app/" }));
 app.use(express.json());
 
 app.post("/login", async (req, res) => {
@@ -118,6 +118,6 @@ app.post("/add", async (req, res) => {
   } catch (e) {}
 });
 
-app.listen(8000, () => {
+app.listen(process.env.port || 8000, () => {
   console.log("Server running on port 8000");
 });
