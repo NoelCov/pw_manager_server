@@ -17,11 +17,21 @@ const db = await openDB();
 const app = express();
 app.use(
   cors({
-    origin: ["http://pw-manager-noelcov.vercel.app", "http://localhost:3000", "http://pw-manager-flame.vercel.app", "https://pw-manager-flame.vercel.app", "http://pw-manager-noelcov.vercel.app"],
-    methods: ["POST"]
+    origin: [
+      "http://pw-manager-noelcov.vercel.app",
+      "http://localhost:3000",
+      "http://pw-manager-flame.vercel.app",
+      "https://pw-manager-flame.vercel.app",
+      "http://pw-manager-noelcov.vercel.app",
+    ],
+    methods: ["POST"],
   })
 );
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.status(200).send("Hi there");
+});
 
 app.post("/login", async (req, res) => {
   const username = req.body.username;
